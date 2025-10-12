@@ -1,0 +1,53 @@
+- type: entity
+  name: bombarda
+  parent: BaseItem
+  id: WeaponLauncherBombarda
+  description: Bombaga
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Weapons/Launchers/bombarda.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Ginormous
+    sprite: _Wega/Objects/Weapons/Launchers/bombarda.rsi
+  - type: ItemSlots
+    slots:
+      gun_chamber:
+        name: Chamber
+        startingItem: GrenadeFrag
+        priority: 1
+        whitelist:
+          tags:
+            - Grenade
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: false
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+    soundRack: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: Appearance
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: Clothing
+    sprite: _Wega/Objects/Weapons/Launchers/bombarda.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
