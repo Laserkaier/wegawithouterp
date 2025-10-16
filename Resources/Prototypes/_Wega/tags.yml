@@ -227,6 +227,8 @@
 - type: Tag
   id: SlimeRND
 
+- type: Tag
+  id: SyndicateRapier
 
-
-
+- type: Tag
+  id: Shrimp
