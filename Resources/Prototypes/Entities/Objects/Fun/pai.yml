@@ -227,12 +227,13 @@
 - type: entity
   parent: BaseMentalAction
   id: ActionPAIOpenMap
-  name: Open Map
-  description: Open your map interface and guide your owner.
+  name: Меняет статус
+  description: Позволяет сменить статус розыска в радиусе видимости
   components:
   - type: Action
     icon: { sprite: Interface/Actions/pai-map.rsi, state: icon }
     itemIconStyle: NoItem
   - type: InstantAction
-    event: !type:OpenUiActionEvent
+    event: !type:PAIsyndiWantedEvent
       key: enum.StationMapUiKey.Key
+

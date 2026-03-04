@@ -33,6 +33,8 @@ public sealed class PAISystem : EntitySystem
         SubscribeLocalEvent<PAIComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<PAIComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<PAIComponent, BeingMicrowavedEvent>(OnMicrowaved);
+        SubscribeLocalEvent<PAIComponent, PAISecurityBarEvent>(OnSecurityBar); // Corvax-Wega PAI
+        SubscribeLocalEvent<PAIComponent, PAIsyndiWantedEvent>(OnWantedUse); // Corvax-Wega PAI
     }
 
     private void OnUseInHand(EntityUid uid, PAIComponent component, UseInHandEvent args)
@@ -119,4 +121,20 @@ public sealed class PAISystem : EntitySystem
                 _metaData.SetEntityName(uid, proto.Name);
         }
     }
+    // Corvax-Wega PAI start
+    public void OnSecurityBar(Entity<PAIComponent> ent, ref PAISecurityBarEvent args)
+    {
+        EnsureComp<ShowCriminalRecordIconsComponent>(ent);
+        EnsureComp<ShowContrabandDetailsComponent>(ent);
+        EnsureComp<ShowJobIconsComponent>(ent);
+        EnsureComp<ShowMindShieldIconsComponent>(ent);
+    }
+
+    public void OnWantedUse(Entity<PAIComponent> ent, ref PAIsyndiWantedEvent args)
+    {
+        if (TryComp<CriminalRecordComponet>(args.Entity))
+        {
+        }
+    }
+    // Corvax-Wega PAI end
 }

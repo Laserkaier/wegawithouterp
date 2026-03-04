@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.PAI;
 
@@ -39,4 +40,22 @@ public sealed partial class PAIComponent : Component
     /// </summary>
     [DataField]
     public string ScramblePopup = "pai-system-scramble-popup";
+
+    /// <summary>
+    /// Corvax-Wega PAI start
+    /// </summary>
+
+    [Serializable, NetSerializable, ByRefEvent, DataDefinition]
+    public sealed partial class PAISecurityBarEvent
+    {
+    }
+
+    [Serializable, NetSerializable, ByRefEvent, DataDefinition]
+    public sealed partial class PAIsyndiWantedEvent : WorldTargetActionEvent
+    {
+    }
+
+    /// <summary>
+    /// Corvax-Wega PAI end
+    /// </summary>
 }

@@ -41,3 +41,19 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+# Corvax-Wega PAI
+- type: listing
+  id: PAISyndiWanted
+  name: розыск
+  description: Отображает розыски, а также позволяет их менять 
+  productAction: ActionPAISyndiWanted
+  raiseProductEventOnUser: true
+  productEvent: !type:PAISecurityBarEvent
+  cost:
+    SiliconMemory: 5
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
