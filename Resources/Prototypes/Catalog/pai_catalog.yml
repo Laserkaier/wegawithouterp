@@ -45,7 +45,7 @@
 # Corvax-Wega PAI
 - type: listing
   id: PAISyndiWanted
-  name: розыск
+  name: Розыск
   description: Отображает розыски, а также позволяет их менять 
   productAction: ActionPAISyndiWanted
   raiseProductEventOnUser: true

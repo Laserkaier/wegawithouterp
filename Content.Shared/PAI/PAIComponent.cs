@@ -1,5 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Content.Shared.Actions;
+using Content.Shared.DoAfter;
 
 namespace Content.Shared.PAI;
 
@@ -13,7 +15,7 @@ namespace Content.Shared.PAI;
 ///  and there's not always enough players and ghost roles to justify it.
 /// All logic in PAISystem.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent] 
 public sealed partial class PAIComponent : Component
 {
     /// <summary>
@@ -40,22 +42,19 @@ public sealed partial class PAIComponent : Component
     /// </summary>
     [DataField]
     public string ScramblePopup = "pai-system-scramble-popup";
-
-    /// <summary>
-    /// Corvax-Wega PAI start
-    /// </summary>
-
-    [Serializable, NetSerializable, ByRefEvent, DataDefinition]
-    public sealed partial class PAISecurityBarEvent
-    {
-    }
-
-    [Serializable, NetSerializable, ByRefEvent, DataDefinition]
-    public sealed partial class PAIsyndiWantedEvent : WorldTargetActionEvent
-    {
-    }
-
-    /// <summary>
-    /// Corvax-Wega PAI end
-    /// </summary>
 }
+/// <summary>
+/// Corvax-Wega PAI start
+/// </summary>
+
+public sealed partial class PAISecurityBarEvent : WorldTargetActionEvent
+{
+}
+
+public sealed partial class PAIsyndiWantedEvent : WorldTargetActionEvent
+{
+}
+
+/// <summary>
+/// Corvax-Wega PAI end
+/// </summary>

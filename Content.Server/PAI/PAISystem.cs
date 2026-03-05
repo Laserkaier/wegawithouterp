@@ -9,6 +9,10 @@ using Content.Shared.Popups;
 using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using System.Text;
+using Robust.Shared.Prototypes;
+using Robust.Server.GameObjects;
+using Content.Shared.Overlays;
+using Content.Shared.Contraband;
 
 namespace Content.Server.PAI;
 
@@ -28,7 +32,6 @@ public sealed class PAISystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeLocalEvent<PAIComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<PAIComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<PAIComponent, MindRemovedMessage>(OnMindRemoved);
@@ -122,7 +125,7 @@ public sealed class PAISystem : EntitySystem
         }
     }
     // Corvax-Wega PAI start
-    public void OnSecurityBar(Entity<PAIComponent> ent, ref PAISecurityBarEvent args)
+    private void OnSecurityBar(Entity<PAIComponent> ent, ref PAISecurityBarEvent args)
     {
         EnsureComp<ShowCriminalRecordIconsComponent>(ent);
         EnsureComp<ShowContrabandDetailsComponent>(ent);
@@ -130,9 +133,9 @@ public sealed class PAISystem : EntitySystem
         EnsureComp<ShowMindShieldIconsComponent>(ent);
     }
 
-    public void OnWantedUse(Entity<PAIComponent> ent, ref PAIsyndiWantedEvent args)
+    private void OnWantedUse(Entity<PAIComponent> ent, ref PAIsyndiWantedEvent args)
     {
-        if (TryComp<CriminalRecordComponet>(args.Entity))
+        if (HasComp<ShowCriminalRecordIconsComponent>(args.Entity))
         {
         }
     }

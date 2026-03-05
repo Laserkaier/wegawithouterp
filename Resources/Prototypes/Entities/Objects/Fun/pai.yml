@@ -239,7 +239,7 @@
 
 - type: entity
   parent: BaseMentalAction
-  id: ActionPAIOpenMap
+  id: ActionPAIOpenWanted
   name: Меняет статус
   description: Позволяет сменить статус розыска в радиусе видимости
   components:
