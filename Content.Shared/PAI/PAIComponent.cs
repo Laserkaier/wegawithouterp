@@ -47,11 +47,12 @@ public sealed partial class PAIComponent : Component
 /// Corvax-Wega PAI start
 /// </summary>
 
-public sealed partial class PAISecurityBarEvent : WorldTargetActionEvent
+[Serializable, NetSerializable, ByRefEvent, DataDefinition]
+public sealed partial class PAISecurityBarEvent
 {
 }
 
-public sealed partial class PAIsyndiWantedEvent : WorldTargetActionEvent
+public sealed partial class ActionPAISyndiWanted : WorldTargetActionEvent
 {
 }
 
