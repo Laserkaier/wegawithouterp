@@ -10,7 +10,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: Blood
-        Quantity: 650
+        Quantity: 6500
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
