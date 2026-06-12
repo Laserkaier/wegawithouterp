@@ -10,4 +10,8 @@ public sealed partial class FlashModifierComponent : Component
 {
     [DataField]
     public float Modifier = 1f;
+
+    [DataField]
+    public bool IgnoreImmunity = false;
 }
+

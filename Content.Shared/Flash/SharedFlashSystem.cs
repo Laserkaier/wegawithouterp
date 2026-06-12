@@ -184,14 +184,22 @@ public abstract partial class SharedFlashSystem : EntitySystem
         float slowTo,
         bool displayPopup = true,
         bool melee = false,
+        bool IgnoreImmunityCheck = false,
         TimeSpan? stunDuration = null)
     {
         //CorvaxWega duration modifier for resomi
         if (TryComp<FlashModifierComponent>(target, out var flashModifier))
+        {
             flashDuration *= flashModifier.Modifier;
+            if (flashModifier.IgnoreImmunity)
+            {
+                IgnoreImmunityCheck = true;
+            }
+        }
 
         var attempt = new FlashAttemptEvent(target, user, used);
-        RaiseLocalEvent(target, ref attempt, true);
+        if (!IgnoreImmunityCheck)
+            RaiseLocalEvent(target, ref attempt, true);
 
         if (attempt.Cancelled)
             return;
