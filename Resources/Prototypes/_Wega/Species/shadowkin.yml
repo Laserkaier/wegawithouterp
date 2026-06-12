@@ -1,0 +1,13 @@
+- type: species
+  id: Shadowkin
+  name: species-name-shadowkin
+  roundStart: true
+  prototype: MobShadowkin
+  defaultSkinTone: "#FFFFFF"
+  dollPrototype: AppearanceShadowkin
+  maleFirstNames: NamesShadowkin
+  femaleFirstNames: NamesShadowkin
+  naming: First
+  skinColoration: Hues
+  minHeight: 130
+  maxHeight: 170

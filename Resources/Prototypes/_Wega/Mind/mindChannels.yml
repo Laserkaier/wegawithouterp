@@ -15,3 +15,9 @@
   name: veil-cult-mind-channel
   keycode: 'р'
   color: "#b5a642"
+
+- type: mindChannel
+  id: Empathy
+  name: collective-mind-empathy
+  keycode: 'м'
+  color: "#7f32a8"

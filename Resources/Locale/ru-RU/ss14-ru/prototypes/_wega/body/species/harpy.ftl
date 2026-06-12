@@ -75,3 +75,5 @@ ent-OrganHarpyLiver = { ent-OrganBaseLiver }
 ent-OrganHarpyKidneys = { ent-OrganBaseKidneys }
     .desc = { ent-OrganBaseKidneys.desc }
     .suffix = { ent-OrganHarpyInternal.suffix }
+ent-MobShadowkin = Урист МакТенекин
+    .desc = { "" }
