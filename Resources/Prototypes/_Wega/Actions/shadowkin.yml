@@ -1,0 +1,13 @@
+- type: entity
+  id: ActionShadowkinTransmit
+  parent: BaseAction
+  name: Разум
+  description: Позволяет переговариваться с тенекинами
+  components:
+  - type: Action
+    icon: _Wega/Interface/Actions/transmit.png
+    itemIconStyle: BigAction
+    useDelay: 5
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:RevenantTransmitActionEvent
