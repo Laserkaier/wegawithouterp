@@ -11,6 +11,14 @@ public sealed partial class MindLinkComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public HashSet<ProtoId<MindChannelPrototype>> Channels = new();
+
+    /// <summary>
+    /// Special for shadowkins
+    /// </summary>
+    [DataField]
+    public bool MindTelepathy = false;
+
+    public readonly string Action = "ActionShadowkinTransmit";
 }
 
 [RegisterComponent]
